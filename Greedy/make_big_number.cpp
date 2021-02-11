@@ -7,11 +7,10 @@ using namespace std;
 string solution(string number, int k) {
     string answer = "";
     stack<char> stack_number;
-    int index = 1;
     int len_number = number.size();
 
     stack_number.push(number[0]);
-    for (; index < len_number; index++) {
+    for (int index = 1; index < len_number; index++) {
         while (!stack_number.empty() && stack_number.top() < number[index] && k > 0) {
             stack_number.pop();
             k--;
