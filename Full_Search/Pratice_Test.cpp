@@ -16,6 +16,7 @@ vector<int> solution(vector<int> answers) {
     int person_c[cycle_c] = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
     int winner_score = 0;
     
+    // 모든 문제의 답을 탐색하며 정답인 사람의 score 값을 ++
     for (int i = 0; i < answers.size(); i++) {
         int answer = answers[i];
         
@@ -23,6 +24,7 @@ vector<int> solution(vector<int> answers) {
         if (answer == person_b[i % cycle_b]) score[1]++;
         if (answer == person_c[i % cycle_c]) score[2]++;
     }
+    // 1위의 점수를 찾는 과정
     if (score[0] >= score[1] && score[0] >= score[2]) winner_score = score[0];
     else if (score[1] >= score[0] && score[1] >= score[2]) winner_score = score[1];
     else winner_score = score[2];
