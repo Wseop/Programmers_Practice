@@ -1,6 +1,9 @@
+// https://programmers.co.kr/learn/courses/30/lessons/42746?language=cpp
+
 #include <string>
 #include <vector>
 #include <functional>
+#include <algorithm>
 
 using namespace std;
 
