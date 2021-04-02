@@ -5,7 +5,6 @@
 #include <map>
 #include <functional>
 #include <algorithm>
-#include <iostream>
 
 using namespace std;
 
@@ -45,6 +44,7 @@ vector<string> solution(vector<vector<string>> tickets) {
     multimap<string, string> map_tickets;
     string current = "ICN";
     
+    // 경로가 여러개일 경우 알파벳순으로 방문하므로 도착점을 기준으로 오름차순 정렬
     sort(tickets.begin(), tickets.end(), cmp);
     for (auto iter = tickets.begin(); iter != tickets.end(); iter++) {
         map_tickets.insert(make_pair((*iter)[0], (*iter)[1]));

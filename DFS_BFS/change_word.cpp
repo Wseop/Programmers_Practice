@@ -1,9 +1,11 @@
 // https://programmers.co.kr/learn/courses/30/lessons/43163?language=cpp
 
+// Queue를 사용하는 문제
+// 각 단어들을 정점으로 생각하면 BFS로 해결하는 문제가 됨!
+
 #include <string>
 #include <vector>
 #include <queue>
-#include <iostream>
 
 using namespace std;
 
@@ -39,11 +41,6 @@ int solution(string begin, string target, vector<string> words) {
             q.pop();
         }
         answer++;
-        
-        // for (int temp = 0; temp < next_words.size(); temp++) {
-        //     cout << next_words[temp] << " ";
-        // }
-        // cout << " answer : " << answer << endl;
         
         for (auto current = next_words.begin(); current != next_words.end(); current++) {
             auto next = words.begin();
