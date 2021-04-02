@@ -1,13 +1,19 @@
 // https://programmers.co.kr/learn/courses/30/lessons/43236?language=cpp
 
+// 일반적으로, 이분 탐색 문제의 경우 범위가 매우 크게 주어짐!
+// 답이 될 수 있는 구간을 범위로 잡을 것...
+
 #include <string>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
-// Target value is some value between start ~ end.
-// but, the maximum of them, so use max() when determining the answer value (line 33.)
+// Target이 될 수 있는 범위는 0 ~ 최대 거리 -> start = 0, end = distance로 설정 후 이분 탐색 진행
+// 1-1. 바위 제거 : 바위 사이의 거리가 mid보다 작을 경우 바위를 제거하여 거리를 늘림
+// 1-2. 위치 이동 : 1-1.이 아니면 한 블록 이동
+// 2-1. 제거가능한 바위의 갯수를 초과하면 target이 너무 크기 때문에 최대값을 줄임
+// 2-2. 2-1.이 아니면 target이 작은 경우이므로 최솟값을 늘림
 int solution(int distance, vector<int> rocks, int n) {
     int answer = 0;
     
